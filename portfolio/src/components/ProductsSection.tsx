@@ -1,7 +1,10 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { products } from '@/data/products';
+import Image from 'next/image';
+import Link from 'next/link';
+import { mainProducts, otherProducts } from '@/data/products';
+import type { Product } from '@/types';
 
 const INDUSTRY_COLORS: Record<string, string> = {
   industrial: '#FF6B35',
@@ -51,15 +54,13 @@ export default function ProductsSection() {
           const viewportHeight = window.innerHeight;
           const scrollableDistance = containerHeight - viewportHeight;
 
-          // How far through the sticky container the user has scrolled
           const progress = Math.min(
             1,
             Math.max(0, -rect.top / scrollableDistance)
           );
 
-          // Total width to translate: all cards + title card
-          // Each card ~370px + gap, title card ~400px
-          const totalCards = products.length + 1;
+          // cards + title card + "more" card
+          const totalCards = mainProducts.length + 2;
           const cardWidth = 370;
           const gap = 24;
           const totalRowWidth = totalCards * (cardWidth + gap);
@@ -93,9 +94,10 @@ export default function ProductsSection() {
             PRODUCTS
           </h2>
           <div className="flex flex-col gap-6">
-            {products.map((product) => (
+            {mainProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
+            <MoreProjectsCard />
           </div>
         </div>
       </section>
@@ -107,7 +109,7 @@ export default function ProductsSection() {
     <div
       ref={containerRef}
       id="products"
-      style={{ height: '350vh' }}
+      style={{ height: '300vh' }}
       className="relative section-light"
     >
       <div className="sticky top-0 h-screen overflow-hidden flex items-center">
@@ -136,21 +138,24 @@ export default function ProductsSection() {
               className="mt-6 text-sm uppercase tracking-widest"
               style={{ color: '#737373', fontFamily: 'var(--font-mono)' }}
             >
-              {products.length} products shipped
+              {mainProducts.length + otherProducts.length} products shipped
             </p>
           </div>
 
           {/* Product cards */}
-          {products.map((product) => (
+          {mainProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+
+          {/* "Other Projects" card */}
+          <MoreProjectsCard />
         </div>
       </div>
     </div>
   );
 }
 
-function ProductCard({ product }: { product: (typeof products)[0] }) {
+function ProductCard({ product }: { product: Product }) {
   const industryColor = INDUSTRY_COLORS[product.industry] || '#FF6B35';
 
   return (
@@ -162,13 +167,25 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
       <div className="h-2" style={{ backgroundColor: industryColor }} />
 
       <div className="flex flex-col flex-1 p-6">
-        {/* Industry label */}
-        <span
-          className="text-[11px] uppercase tracking-widest font-medium"
-          style={{ color: industryColor, fontFamily: 'var(--font-mono)' }}
-        >
-          {product.industry}
-        </span>
+        {/* Logo + Industry row */}
+        <div className="flex items-center justify-between">
+          <span
+            className="text-[11px] uppercase tracking-widest font-medium"
+            style={{ color: industryColor, fontFamily: 'var(--font-mono)' }}
+          >
+            {product.industry}
+          </span>
+          {product.logoPath && (
+            <div className="relative w-8 h-8 flex-shrink-0 rounded overflow-hidden">
+              <Image
+                src={product.logoPath}
+                alt={`${product.name} logo`}
+                fill
+                className="object-contain"
+              />
+            </div>
+          )}
+        </div>
 
         {/* Product name */}
         <h3
@@ -202,5 +219,50 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function MoreProjectsCard() {
+  return (
+    <Link
+      href="/projects"
+      className="flex-shrink-0 w-[340px] md:w-[350px] flex flex-col rounded-lg overflow-hidden border border-gray-200 group hover:border-gray-300 transition-colors"
+      style={{ backgroundColor: '#FFFFFF' }}
+    >
+      <div className="h-2" style={{ backgroundColor: '#737373' }} />
+
+      <div className="flex flex-col items-center justify-center flex-1 p-6 text-center">
+        <div
+          className="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+          style={{ backgroundColor: 'rgba(10, 10, 10, 0.05)' }}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0A0A0A"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        <h3
+          className="text-xl font-bold"
+          style={{ fontFamily: 'var(--font-sans)', color: '#0A0A0A' }}
+        >
+          Other Projects
+        </h3>
+        <p
+          className="mt-2 text-sm"
+          style={{ color: '#737373', fontFamily: 'var(--font-mono)' }}
+        >
+          {otherProducts.length} more products
+        </p>
+      </div>
+    </Link>
   );
 }

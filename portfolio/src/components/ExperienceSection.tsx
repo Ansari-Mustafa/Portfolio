@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { experience } from '@/data/experience';
 
 export default function ExperienceSection() {
@@ -185,21 +186,33 @@ function ExperienceCard({
         {entry.period}
       </span>
 
-      {/* Role */}
-      <h3
-        className="text-2xl md:text-3xl font-bold mt-2"
-        style={{ fontFamily: 'var(--font-sans)', color: '#FAFAFA' }}
-      >
-        {entry.role}
-      </h3>
-
-      {/* Company */}
-      <p
-        className="text-lg mt-1"
-        style={{ fontFamily: 'var(--font-sans)', color: '#737373' }}
-      >
-        {entry.company}
-      </p>
+      {/* Role & Company with Logo */}
+      <div className="flex items-center gap-4 mt-2">
+        {entry.logoPath && (
+          <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-white/10">
+            <Image
+              src={entry.logoPath}
+              alt={`${entry.company} logo`}
+              fill
+              className="object-contain p-1"
+            />
+          </div>
+        )}
+        <div>
+          <h3
+            className="text-2xl md:text-3xl font-bold leading-tight"
+            style={{ fontFamily: 'var(--font-sans)', color: '#FAFAFA' }}
+          >
+            {entry.role}
+          </h3>
+          <p
+            className="text-lg"
+            style={{ fontFamily: 'var(--font-sans)', color: '#737373' }}
+          >
+            {entry.company}
+          </p>
+        </div>
+      </div>
 
       {/* Description */}
       <p

@@ -14,6 +14,7 @@ export const products: Product[] = [
     statusLabel: 'Live — deployed with major EU suppliers',
     isFeatured: true,
     isConfidential: true,
+    logoPath: '/images/logo-brade-ai.png',
   },
   {
     id: 'agentcrew',
@@ -26,6 +27,7 @@ export const products: Product[] = [
     status: 'live',
     statusLabel: 'Live — multiple enterprise clients',
     isFeatured: true,
+    logoPath: '/images/logo-agentcrew.png',
   },
   {
     id: 'spied',
@@ -38,6 +40,7 @@ export const products: Product[] = [
     status: 'live',
     statusLabel: 'Live',
     isFeatured: true,
+    logoPath: '/images/logo-spied.png',
   },
   {
     id: 'medgen-ai',
@@ -50,6 +53,7 @@ export const products: Product[] = [
     status: 'live',
     statusLabel: 'Live — in use by NHS doctors',
     isFeatured: true,
+    logoPath: '/images/logo-medgen-ai.png',
   },
   {
     id: 'telehealth-ai',
@@ -62,6 +66,7 @@ export const products: Product[] = [
     status: 'launching-2026',
     statusLabel: 'Under development — launching 2026',
     isFeatured: true,
+    logoPath: '/images/logo-telehealth-ai.png',
   },
   {
     id: 'curiosity-learning',
@@ -74,6 +79,7 @@ export const products: Product[] = [
     status: 'launching-2026',
     statusLabel: 'Launching in Middle East — 2026',
     isFeatured: true,
+    logoPath: '/images/logo-curiosity.svg',
   },
   {
     id: 'hospitality-ai',
@@ -86,6 +92,7 @@ export const products: Product[] = [
     status: 'in-development',
     statusLabel: 'In development',
     isFeatured: false,
+    logoPath: '/images/logo-hospitality-ai.png',
   },
   {
     id: 'supply-chain-finance',
@@ -98,6 +105,7 @@ export const products: Product[] = [
     status: 'live',
     statusLabel: 'Live — partnered with major banks',
     isFeatured: false,
+    logoPath: '/images/logo-supply-chain-finance.png',
   },
   {
     id: 'textile-po',
@@ -110,6 +118,7 @@ export const products: Product[] = [
     status: 'live',
     statusLabel: 'Live',
     isFeatured: false,
+    logoPath: '/images/logo-textile-po.png',
   },
   {
     id: 'hr-hiring',
@@ -122,7 +131,12 @@ export const products: Product[] = [
     status: 'in-development',
     statusLabel: 'In development — under NDA',
     isFeatured: false,
+    logoPath: '/images/logo-hr-hiring.png',
   },
 ];
 
 export const featuredProducts = products.filter((p) => p.isFeatured);
+
+const OTHER_IDS = ['supply-chain-finance', 'textile-po', 'hr-hiring'];
+export const mainProducts = products.filter((p) => !OTHER_IDS.includes(p.id));
+export const otherProducts = products.filter((p) => OTHER_IDS.includes(p.id));

@@ -21,6 +21,7 @@ export interface Product {
   isFeatured: boolean;
   isConfidential?: boolean;
   link?: string;
+  logoPath?: string;
 }
 
 export interface Role {

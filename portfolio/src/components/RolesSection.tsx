@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useMemo } from 'react';
+import Image from 'next/image';
 import { useInView } from '@/hooks/useInView';
 import { roles } from '@/data/roles';
 
@@ -68,25 +69,39 @@ export default function RolesSection() {
                 {role.tag}
               </span>
 
-              {/* Title & Company */}
-              <h3
-                className="text-xl md:text-2xl font-bold mt-2"
-                style={{
-                  fontFamily: 'var(--font-sans)',
-                  color: '#FAFAFA',
-                }}
-              >
-                {role.isStealth ? 'Stealth Startup' : role.title}
-              </h3>
-              <p
-                className="text-base md:text-lg mt-1"
-                style={{
-                  fontFamily: 'var(--font-sans)',
-                  color: '#737373',
-                }}
-              >
-                {role.company}
-              </p>
+              {/* Title & Company with Logo */}
+              <div className="flex items-center gap-3 mt-2">
+                {role.logoPath && (
+                  <div className="relative w-10 h-10 flex-shrink-0 rounded-lg overflow-hidden bg-white/10">
+                    <Image
+                      src={role.logoPath}
+                      alt={`${role.title} logo`}
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                )}
+                <div>
+                  <h3
+                    className="text-xl md:text-2xl font-bold leading-tight"
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      color: '#FAFAFA',
+                    }}
+                  >
+                    {role.isStealth ? 'Stealth Startup' : role.title}
+                  </h3>
+                  <p
+                    className="text-base md:text-lg"
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      color: '#737373',
+                    }}
+                  >
+                    {role.company}
+                  </p>
+                </div>
+              </div>
 
               {/* Description */}
               <p

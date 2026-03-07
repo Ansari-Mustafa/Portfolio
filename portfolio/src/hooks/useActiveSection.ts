@@ -17,26 +17,33 @@ export function useActiveSection() {
   const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    let ticking = false;
 
-    SECTION_IDS.forEach((id, index) => {
-      const element = document.getElementById(id);
-      if (!element) return;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveSection(index);
+      requestAnimationFrame(() => {
+        let activeIdx = 0;
+        const trigger = window.innerHeight * 0.4;
+
+        for (let i = 0; i < SECTION_IDS.length; i++) {
+          const el = document.getElementById(SECTION_IDS[i]);
+          if (!el) continue;
+          // Last section whose top has scrolled past 40% of viewport
+          if (el.getBoundingClientRect().top <= trigger) {
+            activeIdx = i;
           }
-        },
-        { threshold: 0.3 }
-      );
+        }
 
-      observer.observe(element);
-      observers.push(observer);
-    });
+        setActiveSection(activeIdx);
+        ticking = false;
+      });
+    };
 
-    return () => observers.forEach((o) => o.disconnect());
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return { activeSection, sectionIds: SECTION_IDS };

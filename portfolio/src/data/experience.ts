@@ -11,6 +11,7 @@ export const experience: ExperienceEntry[] = [
     fullDescription:
       'Building and shipping AI products across multiple industries. Leading development of multi-agent email automation, growing LV4AI\'s client base with AgentCrew and Spied platforms, and consulting on enterprise AI deployments across Europe, the Middle East, and Pakistan. Deployed production systems with major EU industrial suppliers.',
     tags: ['Multi-Agent Systems', 'LangGraph', 'FastAPI', 'Enterprise AI', 'Production Deployment'],
+    logoPath: '/images/logo-current.png',
   },
   {
     id: 'systems-limited',
