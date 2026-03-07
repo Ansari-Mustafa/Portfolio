@@ -25,6 +25,7 @@ const STATUS_MAP: Record<string, string> = {
 
 export default function ProductsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
   const [translateX, setTranslateX] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -78,6 +79,30 @@ export default function ProductsSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
 
+  // Convert horizontal scroll/trackpad swipe into vertical scroll
+  useEffect(() => {
+    if (isMobile) return;
+    const sticky = stickyRef.current;
+    if (!sticky) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      // Only intercept when there's meaningful horizontal intent
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+
+      const container = containerRef.current;
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      // Only active while section is sticky (top in view)
+      if (rect.top > 0 || rect.bottom < window.innerHeight) return;
+
+      e.preventDefault();
+      window.scrollBy({ top: e.deltaX, behavior: 'instant' });
+    };
+
+    sticky.addEventListener('wheel', handleWheel, { passive: false });
+    return () => sticky.removeEventListener('wheel', handleWheel);
+  }, [isMobile]);
+
   // Mobile: vertical layout
   if (isMobile) {
     return (
@@ -112,7 +137,7 @@ export default function ProductsSection() {
       style={{ height: '300vh' }}
       className="relative section-light"
     >
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+      <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden flex items-center">
         <div
           className="flex items-stretch gap-6 px-12 transition-transform duration-75 ease-out will-change-transform"
           style={{

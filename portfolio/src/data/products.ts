@@ -79,7 +79,7 @@ export const products: Product[] = [
     status: 'launching-2026',
     statusLabel: 'Launching in Middle East — 2026',
     isFeatured: true,
-    logoPath: '/images/logo-curiosity.svg',
+    logoPath: '/images/logo-curiosity.png',
   },
   {
     id: 'hospitality-ai',
