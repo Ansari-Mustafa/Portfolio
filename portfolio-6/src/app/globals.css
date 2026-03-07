@@ -1,0 +1,246 @@
+@import 'tailwindcss';
+
+/* ================================================
+   Design Tokens
+   ================================================ */
+@theme {
+  --color-dark: #0A0A0A;
+  --color-light: #FAFAFA;
+  --color-accent: #FF6B35;
+  --color-accent-secondary: #FFD23F;
+  --color-dim: #737373;
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* ================================================
+   Base Styles
+   ================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  background-color: #0A0A0A;
+  color: #FAFAFA;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #FF6B35;
+  color: #0A0A0A;
+}
+
+/* ================================================
+   Scroll Progress Bar (CSS animation-timeline)
+   ================================================ */
+@supports (animation-timeline: scroll()) {
+  .scroll-progress-bar {
+    animation: grow-progress-width linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes grow-progress-width {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ================================================
+   Keyframes
+   ================================================ */
+@keyframes slide-left {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================================================
+   Animation Utility Classes
+   ================================================ */
+.animate-slide-left {
+  animation: slide-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-bounce-down {
+  animation: bounce-down 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease both;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Initially hidden (for intersection observer reveals) */
+.reveal-hidden {
+  opacity: 0;
+}
+
+.reveal-hidden.revealed {
+  opacity: 1;
+}
+
+/* ================================================
+   Section Styles
+   ================================================ */
+.section-dark {
+  background-color: #0A0A0A;
+  color: #FAFAFA;
+}
+
+.section-light {
+  background-color: #FAFAFA;
+  color: #0A0A0A;
+}
+
+.section-accent {
+  background-color: #FF6B35;
+  color: #0A0A0A;
+}
+
+/* ================================================
+   Industry Colors for Product Cards
+   ================================================ */
+.industry-industrial { border-top-color: #FF6B35; }
+.industry-enterprise { border-top-color: #3B82F6; }
+.industry-healthcare { border-top-color: #10B981; }
+.industry-education { border-top-color: #8B5CF6; }
+.industry-hospitality { border-top-color: #F59E0B; }
+.industry-fintech { border-top-color: #06B6D4; }
+.industry-hr { border-top-color: #EC4899; }
+
+/* ================================================
+   Scrollbar
+   ================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B35;
+}

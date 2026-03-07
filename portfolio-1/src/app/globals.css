@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-hover: var(--bg-card-hover);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-text-dim: var(--text-dim);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-border: var(--border-color);
+  --color-border-light: var(--border-light);
+
+  --color-industry-industrial: #fbbf24;
+  --color-industry-healthcare: #34d399;
+  --color-industry-education: #60a5fa;
+  --color-industry-enterprise: #c084fc;
+  --color-industry-hospitality: #fb923c;
+  --color-industry-hr: #f472b6;
+  --color-industry-fintech: #2dd4bf;
+
+  --font-sans: var(--font-sans-var);
+  --font-serif: var(--font-serif-var);
+  --font-mono: var(--font-mono-var);
+}
+
+:root {
+  --bg: #0a0a0b;
+  --bg-card: #111113;
+  --bg-card-hover: #18181b;
+  --text-primary: #fafaf9;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
+  --accent: #c084fc;
+  --accent-2: #818cf8;
+  --border-color: #27272a;
+  --border-light: #3f3f46;
+}
+
+[data-theme='light'] {
+  --bg: #fafaf9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f4f5;
+  --text-primary: #18181b;
+  --text-muted: #52525b;
+  --text-dim: #71717a;
+  --accent: #9333ea;
+  --accent-2: #6366f1;
+  --border-color: #e4e4e7;
+  --border-light: #d4d4d8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}

@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* ── Terminal Theme Variables ── */
+:root {
+  --bg: #0D1117;
+  --surface: #161B22;
+  --primary: #00FF41;
+  --secondary: #58A6FF;
+  --accent: #FFA657;
+  --dim: #8B949E;
+  --error: #FF7B72;
+  --border: #30363D;
+  --selection: #264F78;
+
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono',
+    Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+/* ── Base Styles ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 13px;
+  scrollbar-color: var(--border) var(--bg);
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--bg);
+  color: var(--primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--selection);
+  color: var(--primary);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dim);
+}
+
+/* ── Links ── */
+a {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+/* ── Blinking Cursor ── */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Typing Animation ── */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--typing-width, 100%);
+  }
+}
+
+.typing-animate {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 0.8s steps(var(--typing-steps, 20)) forwards;
+}
+
+/* ── Fade In ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* ── Custom Theme Utilities ── */
+@theme {
+  --color-terminal-bg: #0D1117;
+  --color-terminal-surface: #161B22;
+  --color-terminal-primary: #00FF41;
+  --color-terminal-secondary: #58A6FF;
+  --color-terminal-accent: #FFA657;
+  --color-terminal-dim: #8B949E;
+  --color-terminal-error: #FF7B72;
+  --color-terminal-border: #30363D;
+  --color-terminal-selection: #264F78;
+}
