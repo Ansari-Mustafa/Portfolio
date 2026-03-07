@@ -1,5 +1,6 @@
 import ScrollProgress from '@/components/ScrollProgress';
 import SectionDots from '@/components/SectionDots';
+import CalBooking from '@/components/CalBooking';
 import HeroSection from '@/components/HeroSection';
 import BioSection from '@/components/BioSection';
 import RolesSection from '@/components/RolesSection';
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <ScrollProgress />
       <SectionDots />
+      <CalBooking />
       <HeroSection />
       <BioSection />
       <RolesSection />
