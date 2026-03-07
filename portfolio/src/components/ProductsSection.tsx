@@ -60,8 +60,8 @@ export default function ProductsSection() {
             Math.max(0, -rect.top / scrollableDistance)
           );
 
-          // cards + title card + "more" card
-          const totalCards = mainProducts.length + 2;
+          // cards + "more" card (no title card in the row anymore)
+          const totalCards = mainProducts.length + 1;
           const cardWidth = 370;
           const gap = 24;
           const totalRowWidth = totalCards * (cardWidth + gap);
@@ -137,42 +137,38 @@ export default function ProductsSection() {
       style={{ height: '300vh' }}
       className="relative section-light"
     >
-      <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden flex items-center">
+      <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
+        {/* Header row — fixed above scrolling cards */}
+        <div className="px-12 mb-8">
+          <p
+            className="text-sm uppercase tracking-widest mb-2"
+            style={{ color: '#737373', fontFamily: 'var(--font-mono)' }}
+          >
+            Most relevant
+          </p>
+          <h2
+            className="font-bold tracking-tight"
+            style={{
+              fontSize: 'clamp(36px, 5vw, 56px)',
+              fontFamily: 'var(--font-sans)',
+              color: '#0A0A0A',
+              lineHeight: 1,
+            }}
+          >
+            PRODUCTS
+          </h2>
+        </div>
+
+        {/* Scrolling cards row */}
         <div
           className="flex items-stretch gap-6 px-12 transition-transform duration-75 ease-out will-change-transform"
           style={{
             transform: `translateX(${translateX}px)`,
           }}
         >
-          {/* Title card */}
-          <div className="flex-shrink-0 w-[400px] flex flex-col justify-center pr-8">
-            <h2
-              className="font-bold tracking-tight"
-              style={{
-                fontSize: '80px',
-                fontFamily: 'var(--font-sans)',
-                color: '#0A0A0A',
-                lineHeight: 0.95,
-              }}
-            >
-              PROD
-              <br />
-              UCTS
-            </h2>
-            <p
-              className="mt-6 text-sm uppercase tracking-widest"
-              style={{ color: '#737373', fontFamily: 'var(--font-mono)' }}
-            >
-              {mainProducts.length + otherProducts.length} products shipped
-            </p>
-          </div>
-
-          {/* Product cards */}
           {mainProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-
-          {/* "Other Projects" card */}
           <MoreProjectsCard />
         </div>
       </div>
