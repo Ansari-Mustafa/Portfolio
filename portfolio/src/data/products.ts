@@ -2,8 +2,8 @@ import { Product } from '@/types';
 
 export const products: Product[] = [
   {
-    id: 'brade-ai',
-    name: 'Brade AI',
+    id: 'stealth-ai',
+    name: 'Stealth AI',
     displayName: '[REDACTED]',
     industry: 'industrial',
     shortDescription:

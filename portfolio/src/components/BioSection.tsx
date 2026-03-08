@@ -42,7 +42,7 @@ export default function BioSection() {
               color: '#0A0A0A',
             }}
           >
-            &ldquo;I build AI systems that actually ship.&rdquo;
+            &ldquo;I build AI systems that actually solve problems.&rdquo;
           </blockquote>
         </div>
 
