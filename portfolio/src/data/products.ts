@@ -130,10 +130,22 @@ export const products: Product[] = [
     statusLabel: 'In development — under NDA',
     isFeatured: false,
   },
+  {
+    id: 'iot-bot',
+    name: 'IoT Bot',
+    industry: 'enterprise',
+    shortDescription:
+      'Autonomous robot with Face Recognition, eye-tracking, GPT integration, and AI-powered Large Action Model. Built companion web apps deployed to AWS/Azure.',
+    fullDescription:
+      'Designed and deployed interactive software for an autonomous robot featuring Face Recognition (FaceID), eye-tracking and facial animations, GPT integration for natural language queries, hardware-software integration with multiple sensors and actuators, Node-Red middleware, and an AI-powered Large Action Model (LAM). Built companion web apps with Node.js, Django, and Flask. Deployed to AWS/Azure.',
+    status: 'live',
+    statusLabel: 'Live — Systems Limited',
+    isFeatured: false,
+  },
 ];
 
 export const featuredProducts = products.filter((p) => p.isFeatured);
 
-const OTHER_IDS = ['supply-chain-finance', 'textile-po', 'hr-hiring'];
+const OTHER_IDS = ['supply-chain-finance', 'textile-po', 'hr-hiring', 'iot-bot'];
 export const mainProducts = products.filter((p) => !OTHER_IDS.includes(p.id));
 export const otherProducts = products.filter((p) => OTHER_IDS.includes(p.id));

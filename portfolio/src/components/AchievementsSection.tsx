@@ -1,13 +1,14 @@
 'use client';
 
 import { useRef, useMemo } from 'react';
+import Link from 'next/link';
 import { useInView } from '@/hooks/useInView';
 import { achievements } from '@/data/achievements';
 
 const ACHIEVEMENT_BADGES = [
-  { big: 'TOP 3', subtitle: 'Final Year Project' },
-  { big: '1ˢᵗ PLACE', subtitle: 'Robotics Competition - Winner' },
-  { big: '#2/104', subtitle: 'Class Rank' },
+  { big: 'TOP 3', subtitle: 'Final Year Project', href: '/projects#fyp' },
+  { big: '1ˢᵗ PLACE', subtitle: 'Robotics Competition - Winner', href: '/projects#robotics' },
+  { big: '#2/104', subtitle: 'Class Rank', href: '/projects' },
 ];
 
 export default function AchievementsSection() {
@@ -36,9 +37,10 @@ export default function AchievementsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {achievements.map((achievement, index) => (
-            <div
+            <Link
               key={achievement.id}
-              className="text-center transition-all duration-800 ease-out"
+              href={ACHIEVEMENT_BADGES[index]?.href || '/projects'}
+              className="text-center transition-all duration-800 ease-out group cursor-pointer"
               style={{
                 opacity: isInView ? 1 : 0,
                 transform: isInView ? 'translateY(0)' : 'translateY(40px)',
@@ -47,7 +49,7 @@ export default function AchievementsSection() {
             >
               {/* Big badge */}
               <div
-                className="font-bold leading-none"
+                className="font-bold leading-none group-hover:scale-105 transition-transform duration-300"
                 style={{
                   fontSize: 'clamp(40px, 8vw, 80px)',
                   fontFamily: 'var(--font-sans)',
@@ -80,7 +82,7 @@ export default function AchievementsSection() {
               >
                 {achievement.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

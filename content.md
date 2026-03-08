@@ -116,22 +116,45 @@ Founded a 3D printing and CAD modeling startup in Pakistan when 3D printing wasn
 
 ## Achievements & Projects
 
+### Systems Limited — IOT Bot Project
+**Role: Project Lead / Robotics Engineer**
+
+Designed and deployed interactive software for an autonomous robot with the following capabilities:
+- **Face recognition (FaceID)** for user recognition
+- **Eye-tracking and facial animations** for immersive interaction
+- **GPT integration** for natural language queries
+- **Hardware–software integration:** multiple sensors, actuators, and software triggers for enhanced control
+- **Middleware (Node-Red)** for smooth communication between software and hardware
+- **AI-powered Large Action Model (LAM)** so the robot performs actions from AI prompts
+- **Use-case applications:** e.g. waiter robot with full restaurant menu and voice or HMI (Human–Machine Interface) order placement
+
+**Companion app (web):** Developed user-friendly, responsive web interfaces and back-end services (Node.js, Django, Flask). Integrated third-party APIs, user auth, and caching for performance. Led testing, deployment to AWS/Azure, documentation, and ongoing support; collaborated with designers, PMs, and clients.
+
+`FaceID` `Eye Tracking` `GPT` `Node-Red` `LAM` `Robotics` `HMI` `Waiter Robot` `Node.js` `Django` `Flask` `AWS` `Azure`
+
 ### Final Year Project · Top Grade — ML-Based Industrial Sorting Platform
 Developed a platform capable of moving objects in omnidirectional paths using machine learning to optimize movements. Modular hexagonal panels connect magnetically, allowing reconfigurable sizing. Powered by Q-learning with an interactive GUI for real-time visualization.
 
 `Q-Learning` `Modular Hardware` `Magnetic Assembly` `Omnidirectional` `Interactive GUI` `Reconfigurable`
 
-### Competition Winner — Junior Year Robotics Competition
-Won the university robotics competition by developing multiple autonomous robots for maze mapping and maze solving challenges.
+### Competition Winner — Junior Year Robotics Competition (GIK Institute)
+Developed multiple autonomous robots with **maze mapping**, **path-finding**, and **wireless data transmission and control** for maze mapping and maze solving challenges. **1st Place** in competition. Received **full funding from GIK Institute** for the project.
+
+`Maze Mapping` `Path-Finding` `Wireless Control` `Autonomous Robotics`
 
 ### Academic — B.Sc. Electrical Engineering — Distinction
 Graduated ranked #2 out of 104 students from GIK Institute, one of Pakistan's top engineering universities. Still an active member of the ARES Lab (Accelerated Reconfigurable Embedded Systems).
 
 ### Other University Projects
-- EEG Blink Detection — ML models for cleaner neuroscientific data
-- Microprocessor Design on FPGAs
-- Non-Invasive Temperature Monitoring — deployed during COVID at university
-- Machine Voice Detection using ML
+*Mostly during university (GIK Institute).*
+
+- **EEG Blink Detection via Machine Learning** — Used MATLAB's ML classification tools to process and analyze EEG data. Built a custom model to identify and filter blinks in EEG datasets, improving accuracy and reliability of readings. Detected and removed blinks to enhance data quality for neuroscientific and medical applications.
+
+- **Design and Implementation of Microprocessors on FPGA** — Developed a custom 16-bit microprocessor architecture (ALU, control unit, registers) targeting efficient execution of basic instructions and low power. Optimized program memory and RAM usage; achieved seamless instruction execution on Artix-7 FPGA (Nexys 4 DDR).
+
+- **Non-Invasive Temperature Monitoring System** — COVID-19 precautionary solution combining an MLX-90614 infrared sensor with an Arduino-powered solenoid door lock. Monitored for elevated temperatures and enforced secure access control; deployed at university.
+
+- **Voice Detection using Machine Learning** — MATLAB-based audio classification system using a Classification Learner algorithm with 20 distinctive parameters to accurately differentiate between various voices.
 
 ---
 
