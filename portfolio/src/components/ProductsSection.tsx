@@ -181,7 +181,7 @@ function ProductCard({ product }: { product: Product }) {
 
   return (
     <div
-      className="flex-shrink-0 w-[340px] md:w-[350px] flex flex-col rounded-lg overflow-hidden border border-gray-200"
+      className="flex-shrink-0 w-full md:w-[350px] flex flex-col rounded-lg overflow-hidden border border-gray-200"
       style={{ backgroundColor: '#FFFFFF' }}
     >
       {/* Top colored stripe */}
@@ -247,7 +247,7 @@ function MoreProjectsCard() {
   return (
     <Link
       href="/projects"
-      className="flex-shrink-0 w-[340px] md:w-[350px] flex flex-col rounded-lg overflow-hidden border border-gray-200 group hover:border-gray-300 transition-colors"
+      className="flex-shrink-0 w-full md:w-[350px] flex flex-col rounded-lg overflow-hidden border border-gray-200 group hover:border-gray-300 transition-colors"
       style={{ backgroundColor: '#FFFFFF' }}
     >
       <div className="h-2" style={{ backgroundColor: '#737373' }} />

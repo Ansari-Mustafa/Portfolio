@@ -61,13 +61,13 @@ export default function HeroSection() {
         <div className="relative flex flex-col items-center justify-center w-full max-w-5xl mx-auto">
           {/* MUSTAFA — moves up on scroll */}
           <h1
-            className="relative z-10 font-bold tracking-tighter leading-none text-center select-none"
+            className="relative z-10 font-bold tracking-tighter leading-none text-center select-none will-change-transform"
             style={{
               fontSize: 'clamp(48px, 12vw, 120px)',
               fontFamily: 'var(--font-sans)',
-              transform: `translateY(${-splitAmount}px)`,
-              transition: 'transform 0.1s ease-out, opacity 0.6s ease',
+              transform: `translate3d(0, ${-splitAmount}px, 0)`,
               opacity: isLoaded ? 1 : 0,
+              transition: isLoaded ? undefined : 'opacity 0.6s ease',
             }}
           >
             MUSTAFA
@@ -75,13 +75,12 @@ export default function HeroSection() {
 
           {/* Headshot — absolutely centered behind names, revealed by clip-path */}
           <div
-            className="absolute left-1/2 top-1/2"
+            className="absolute left-1/2 top-1/2 will-change-transform"
             style={{
               width: 'clamp(180px, 30vw, 300px)',
               height: 'clamp(180px, 30vw, 300px)',
-              transform: 'translate(-50%, -50%)',
+              transform: 'translate3d(-50%, -50%, 0)',
               clipPath: `circle(${clipRadius}% at 50% 50%)`,
-              transition: 'clip-path 0.1s ease-out',
             }}
           >
             <Image
@@ -95,13 +94,13 @@ export default function HeroSection() {
 
           {/* ANSARI — moves down on scroll */}
           <h1
-            className="relative z-10 font-bold tracking-tighter leading-none text-center select-none"
+            className="relative z-10 font-bold tracking-tighter leading-none text-center select-none will-change-transform"
             style={{
               fontSize: 'clamp(48px, 12vw, 120px)',
               fontFamily: 'var(--font-sans)',
-              transform: `translateY(${splitAmount}px)`,
-              transition: 'transform 0.1s ease-out, opacity 0.6s ease',
+              transform: `translate3d(0, ${splitAmount}px, 0)`,
               opacity: isLoaded ? 1 : 0,
+              transition: isLoaded ? undefined : 'opacity 0.6s ease',
             }}
           >
             ANSARI
@@ -109,13 +108,13 @@ export default function HeroSection() {
 
           {/* Subtitle */}
           <p
-            className="text-lg md:text-xl tracking-wide text-center"
+            className="text-lg md:text-xl tracking-wide text-center will-change-transform"
             style={{
               fontFamily: 'var(--font-mono)',
               color: '#737373',
               opacity: isLoaded ? 1 : 0,
-              transform: `translateY(${splitAmount}px)`,
-              transition: 'transform 0.1s ease-out, opacity 0.7s ease 0.4s',
+              transform: `translate3d(0, ${splitAmount}px, 0)`,
+              transition: isLoaded ? undefined : 'opacity 0.7s ease 0.4s',
             }}
           >
             AI Engineer &amp; Entrepreneur
