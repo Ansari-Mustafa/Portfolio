@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useMemo } from 'react';
+import Image from 'next/image';
 import { useInView } from '@/hooks/useInView';
 import { education } from '@/data/education';
 
@@ -56,13 +57,25 @@ export default function EducationSection() {
                 {entry.badge}
               </span>
 
-              {/* Institution */}
-              <h3
-                className="text-2xl md:text-3xl font-bold"
-                style={{ fontFamily: 'var(--font-sans)', color: '#FAFAFA' }}
-              >
-                {entry.school}
-              </h3>
+              {/* Institution with Logo */}
+              <div className="flex items-center gap-4">
+                {entry.logoPath && (
+                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-white/10">
+                    <Image
+                      src={entry.logoPath}
+                      alt={`${entry.school} logo`}
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                )}
+                <h3
+                  className="text-2xl md:text-3xl font-bold"
+                  style={{ fontFamily: 'var(--font-sans)', color: '#FAFAFA' }}
+                >
+                  {entry.school}
+                </h3>
+              </div>
 
               {/* Degree */}
               <p

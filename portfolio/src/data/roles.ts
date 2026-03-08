@@ -5,11 +5,9 @@ export const roles: Role[] = [
     id: 'stealth',
     tag: 'Founding Engineer',
     title: 'Stealth Startup',
-    company: 'Enterprise AI Automation · Germany',
-    location: 'Germany',
+    company: 'Enterprise AI Automation',
     description:
-      'Building an end-to-end AI automation platform for enterprise B2B operations. Multi-agent systems processing complex workflows at scale.',
-    highlight: '30 minutes to 30 seconds',
+      'Owning the full technical lifecycle — from architecture and development to deployment and production operations. Building the core AI platform, designing how it integrates into enterprise workflows, and shipping it end-to-end as the sole engineer.',
     logoPath: '/images/logo-stealth.png',
     isStealth: true,
   },
@@ -19,17 +17,8 @@ export const roles: Role[] = [
     title: 'LV4AI',
     company: 'AI Services & Products Company',
     description:
-      'AI services company building everything and anything AI. Our platforms — AgentCrew (enterprise agent configuration, team orchestration, and integration dashboard) and Spied (workflow automation) — are successfully integrated with multiple enterprise clients.',
+      'Co-founded an AI company shipping products and services across healthcare, education, hospitality, fintech, and industrial automation. Our platform AgentCrew powers enterprise agent orchestration. We also provide AI strategy consulting and build custom AI systems integrated directly into client operations.',
     logoPath: '/images/logo-lv4ai.png',
-  },
-  {
-    id: 'consulting',
-    tag: 'AI Consultant',
-    title: 'Industrial Automation',
-    company: 'European Industrial Suppliers · Under NDA',
-    description:
-      "Consulting with a German startup to automate workflow processes for some of Europe's largest industrial distributors. Designing and deploying multi-agent AI systems for sales coordination and order management.",
-    logoPath: '/images/logo-consulting.png',
   },
   {
     id: 'freiburg',

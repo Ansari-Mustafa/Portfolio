@@ -5,9 +5,9 @@ import { useInView } from '@/hooks/useInView';
 import { achievements } from '@/data/achievements';
 
 const ACHIEVEMENT_BADGES = [
+  { big: 'TOP 3', subtitle: 'Final Year Project' },
+  { big: '1ˢᵗ PLACE', subtitle: 'Robotics Competition - Winner' },
   { big: '#2/104', subtitle: 'Class Rank' },
-  { big: 'TOP GRADE', subtitle: 'Final Year Project' },
-  { big: 'WINNER', subtitle: 'Robotics Competition' },
 ];
 
 export default function AchievementsSection() {
@@ -31,7 +31,7 @@ export default function AchievementsSection() {
             transform: isInView ? 'translateY(0)' : 'translateY(30px)',
           }}
         >
-          ACHIEVEMENTS
+          ACADEMIC ACHIEVEMENTS
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">

@@ -2,27 +2,39 @@ import { ExperienceEntry } from '@/types';
 
 export const experience: ExperienceEntry[] = [
   {
-    id: 'current',
-    period: '2024 — Present',
-    role: 'Founding Engineer & Co-Founder',
-    company: 'Stealth Startup · LV4AI · Independent Consulting',
+    id: 'founding-engineer',
+    period: '2025 — Present',
+    role: 'Founding Engineer',
+    company: 'Stealth Startup · Enterprise AI Automation',
     description:
-      'Building and shipping AI products across multiple industries. Leading development of enterprise AI automation, growing LV4AI\'s client base, and consulting on enterprise AI deployments across Europe, the Middle East, and Pakistan.',
+      'Sole engineer owning the full stack — architecture, development, deployment, and production. Building multi-agent AI systems that automate complex B2B workflows at scale.',
     fullDescription:
-      'Building and shipping AI products across multiple industries. Leading development of multi-agent email automation, growing LV4AI\'s client base with AgentCrew and Spied platforms, and consulting on enterprise AI deployments across Europe, the Middle East, and Pakistan. Deployed production systems with major EU industrial suppliers.',
-    tags: ['Multi-Agent Systems', 'LangGraph', 'FastAPI', 'Enterprise AI', 'Production Deployment'],
-    logoPath: '/images/logo-current.png',
+      'Sole engineer owning the full technical lifecycle of an enterprise AI automation platform. Architecting and building multi-agent systems for B2B workflow automation, designing integration patterns for complex enterprise environments, and managing production deployments serving major industrial clients.',
+    tags: ['Multi-Agent Systems', 'LangGraph', 'FastAPI', 'Full-Stack', 'Production Deployment'],
+    logoPath: '/images/logo-stealth.png',
+  },
+  {
+    id: 'lv4ai',
+    period: '2025 — Present',
+    role: 'Co-Founder',
+    company: 'LV4AI · AI Services & Products',
+    description:
+      'Co-founded an AI company shipping products across healthcare, education, hospitality, and industrial automation. Also providing AI strategy and custom development services.',
+    fullDescription:
+      'Co-founded an AI company building products and delivering services across multiple industries. Shipped AgentCrew for enterprise agent orchestration and Spied for workflow automation. Delivering AI strategy consulting and building custom AI systems integrated directly into client operations across Europe, the Middle East, and Pakistan.',
+    tags: ['AgentCrew', 'AI Products', 'AI Strategy', 'Client Services', 'Multi-Industry'],
+    logoPath: '/images/logo-lv4ai.png',
   },
   {
     id: 'systems-limited',
-    period: '~2 Years · Systems Limited',
-    role: 'AI Consultant (Transitioned from IoT)',
+    period: '2023 — 2025',
+    role: 'IoT Consultant → AI Consultant',
     company: "Systems Limited — Pakistan's Largest IT Company",
     description:
       'Started in IoT building an autonomous robot with face recognition and computer vision. Transitioned into AI — built RAG-based agents and an enterprise AI platform used by thousands of employees.',
     fullDescription:
-      'Started in the IoT division building a multi-purpose autonomous robot — designed all hardware components, wrote the full codebase for object avoidance, and built companion apps for multiple use cases (banking, order-taking). The robot featured face recognition, Face ID, eye tracking, multi-modal AI for natural language queries, and computer vision.\n\nTransitioned into a dedicated AI role as the field took off. Built RAG-based agents for internal HR and company systems — implemented an AI platform now used by the entire organization across thousands of employees for day-to-day operations. Also developed the Agno DB AI platform used by multiple teams for task automation across departments.',
-    tags: ['IoT & Robotics', 'Face Recognition', 'Eye Tracking', 'Computer Vision', 'Multi-Modal AI', 'RAG Agents', 'Enterprise AI Platform'],
+      'Started as an IoT Consultant building a multi-purpose autonomous robot — designed all hardware components, wrote the full codebase for object avoidance, and built companion apps for banking and order-taking use cases. The robot featured face recognition, Face ID, eye tracking, multi-modal AI, and computer vision.\n\nTransitioned into an AI Consultant role as the field took off. Built RAG-based agents for internal HR and company systems — implemented an AI platform now used by the entire organization across thousands of employees. Also developed the Agno DB AI platform used by multiple teams for task automation.',
+    tags: ['IoT & Robotics', 'Face Recognition', 'Computer Vision', 'RAG Agents', 'Enterprise AI Platform'],
     logoPath: '/images/logo-systems-limited.png',
   },
   {

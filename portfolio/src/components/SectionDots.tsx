@@ -8,7 +8,7 @@ const SECTION_LABELS = [
   'Roles',
   'Products',
   'Experience',
-  'Achievements',
+  'Academic',
   'Education',
   'Contact',
 ];

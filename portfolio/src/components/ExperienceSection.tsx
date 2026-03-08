@@ -6,6 +6,7 @@ import { experience } from '@/data/experience';
 
 export default function ExperienceSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -57,6 +58,28 @@ export default function ExperienceSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
 
+  // Convert horizontal scroll/trackpad swipe into vertical scroll
+  useEffect(() => {
+    if (isMobile) return;
+    const sticky = stickyRef.current;
+    if (!sticky) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+
+      const container = containerRef.current;
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      if (rect.top > 0 || rect.bottom < window.innerHeight) return;
+
+      e.preventDefault();
+      window.scrollBy({ top: e.deltaX, behavior: 'instant' });
+    };
+
+    sticky.addEventListener('wheel', handleWheel, { passive: false });
+    return () => sticky.removeEventListener('wheel', handleWheel);
+  }, [isMobile]);
+
   // Mobile: show all entries stacked
   if (isMobile) {
     return (
@@ -89,10 +112,10 @@ export default function ExperienceSection() {
     <div
       ref={containerRef}
       id="experience"
-      style={{ height: '200vh' }}
+      style={{ height: '350vh' }}
       className="relative section-dark"
     >
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center px-6">
+      <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden flex items-center justify-center px-6">
         <div className="w-full max-w-5xl mx-auto relative">
           {/* Background watermark */}
           <div
