@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { mainProducts, otherProducts } from '@/data/products';
+import { universityProjects } from '@/data/achievements';
 import type { Product } from '@/types';
 
 const INDUSTRY_COLORS: Record<string, string> = {
@@ -281,7 +282,7 @@ function MoreProjectsCard() {
           className="mt-2 text-sm"
           style={{ color: '#737373', fontFamily: 'var(--font-mono)' }}
         >
-          {otherProducts.length} more products
+          {otherProducts.length + universityProjects.length + 3} more products &amp; projects
         </p>
       </div>
     </Link>
