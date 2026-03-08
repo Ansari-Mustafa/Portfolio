@@ -94,15 +94,18 @@ export default function RolesSection() {
                         <span>Stealth Startup</span>
                         <span
                           aria-hidden="true"
-                          className="absolute inset-0 rounded-sm"
+                          className="absolute inset-0 flex items-center justify-center rounded-sm"
                           style={{
-                            backgroundColor: '#FAFAFA',
+                            backgroundColor: '#0A0A0A',
+                            color: '#FAFAFA',
                             clipPath: cardsInView
                               ? 'inset(0 0 0 0)'
                               : 'inset(0 100% 0 0)',
-                            transition: 'clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
+                            transition: 'clip-path 3s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
                           }}
-                        />
+                        >
+                          [REDACTED]
+                        </span>
                       </span>
                     ) : (
                       role.title

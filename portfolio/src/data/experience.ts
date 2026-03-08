@@ -7,9 +7,9 @@ export const experience: ExperienceEntry[] = [
     role: 'Founding Engineer',
     company: 'Stealth Startup · Enterprise AI Automation',
     description:
-      'Sole engineer owning the full stack — architecture, development, deployment, and production. Building multi-agent AI systems that automate complex B2B workflows at scale.',
+      'AI Software engineer owning the full stack — architecture, development, deployment, and production. Building multi-agent AI systems that automate complex B2B workflows at scale.',
     fullDescription:
-      'Sole engineer owning the full technical lifecycle of an enterprise AI automation platform. Architecting and building multi-agent systems for B2B workflow automation, designing integration patterns for complex enterprise environments, and managing production deployments serving major industrial clients.',
+      'AI Software engineer owning the full technical lifecycle of an enterprise AI automation platform. Architecting and building multi-agent systems for B2B workflow automation, designing integration patterns for complex enterprise environments, and managing production deployments serving major industrial clients.',
     tags: ['Multi-Agent Systems', 'Product Architecture', 'Production Deployment', 'Product Roadmap'],
     logoPath: '/images/logo-stealth.png',
   },
