@@ -30,8 +30,8 @@ export const products: Product[] = [
     logoPath: '/images/logo-agentcrew.png',
   },
   {
-    id: 'spied',
-    name: 'Spied',
+    id: 'spide',
+    name: 'Spide.ai',
     industry: 'enterprise',
     shortDescription:
       'Workflow automation platform for enterprise operations with intelligent agent orchestration.',
@@ -40,7 +40,7 @@ export const products: Product[] = [
     status: 'live',
     statusLabel: 'Live',
     isFeatured: true,
-    logoPath: '/images/logo-spied.png',
+    logoPath: '/images/logo-spide.png',
   },
   {
     id: 'medgen-ai',
@@ -66,7 +66,7 @@ export const products: Product[] = [
     status: 'launching-2026',
     statusLabel: 'Under development — launching 2026',
     isFeatured: true,
-    logoPath: '/images/logo-telehealth-ai.png',
+    logoPath: '/images/logo-tele-ai.png',
   },
   {
     id: 'curiosity-learning',

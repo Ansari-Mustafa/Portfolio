@@ -21,7 +21,7 @@ export const experience: ExperienceEntry[] = [
     description:
       'Co-founded an AI company shipping products across healthcare, education, hospitality, and industrial automation. Also providing AI strategy and custom development services.',
     fullDescription:
-      'Co-founded an AI company building products and delivering services across multiple industries. Shipped AgentCrew for enterprise agent orchestration and Spied for workflow automation. Delivering AI strategy consulting and building custom AI systems integrated directly into client operations across Europe, the Middle East, and Pakistan.',
+      'Co-founded an AI company building products and delivering services across multiple industries. Shipped AgentCrew for enterprise agent orchestration and spide for workflow automation. Delivering AI strategy consulting and building custom AI systems integrated directly into client operations across Europe, the Middle East, and Pakistan.',
     tags: ['AgentCrew', 'AI Products', 'AI Strategy', 'Client Services', 'Multi-Industry'],
     logoPath: '/images/logo-lv4ai.png',
   },

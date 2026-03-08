@@ -146,15 +146,26 @@ export default function ExperienceSection() {
           {/* Progress dots */}
           <div className="flex gap-3 mb-8">
             {experience.map((_, index) => (
-              <div
+              <button
                 key={index}
-                className="h-1 rounded-full transition-all duration-500"
+                type="button"
+                aria-label={`Show ${experience[index].role} at ${experience[index].company}`}
+                className="h-1 rounded-full transition-all duration-500 cursor-pointer"
+                onClick={() => {
+                  const container = containerRef.current;
+                  if (!container) return;
+                  const scrollableDistance = container.offsetHeight - window.innerHeight;
+                  const targetScroll = container.offsetTop + (index / experience.length) * scrollableDistance + 1;
+                  window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+                }}
                 style={{
                   width: activeIndex === index ? '48px' : '24px',
                   backgroundColor:
                     activeIndex === index
                       ? '#FF6B35'
                       : 'rgba(250, 250, 250, 0.15)',
+                  border: 'none',
+                  padding: 0,
                 }}
               />
             ))}

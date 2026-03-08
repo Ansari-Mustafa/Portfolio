@@ -23,7 +23,7 @@ Building an end-to-end AI email automation platform for industrial B2B suppliers
 ### Co-Founder — LV4AI
 **AI Services & Products Company**
 
-AI services company building everything and anything AI. Our platforms — **AgentCrew** (enterprise agent configuration, team orchestration, and integration dashboard) and **Spied** (workflow automation) — are successfully integrated with multiple enterprise clients.
+AI services company building everything and anything AI. Our platforms — **AgentCrew** (enterprise agent configuration, team orchestration, and integration dashboard) and **spide** (workflow automation) — are successfully integrated with multiple enterprise clients.
 
 
 ### M.Sc. Student — Embedded Systems & AI
