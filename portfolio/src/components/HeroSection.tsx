@@ -84,7 +84,7 @@ export default function HeroSection() {
             }}
           >
             <Image
-              src="/images/main-img.png"
+              src="/images/main-img.jpeg"
               alt="Mustafa Ansari"
               fill
               className="object-cover"
