@@ -141,6 +141,15 @@ body {
   }
 }
 
+@keyframes redact-sweep {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
 /* ================================================
    Animation Utility Classes
    ================================================ */

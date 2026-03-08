@@ -4,17 +4,17 @@ export const products: Product[] = [
   {
     id: 'brade-ai',
     name: 'Brade AI',
-    displayName: 'Stealth Startup',
+    displayName: '[REDACTED]',
     industry: 'industrial',
     shortDescription:
-      'AI email automation for industrial B2B suppliers. Multi-agent order processing at scale.',
+      'Multi-agent system for industrial B2B automation. Processing, matching, and response generation at scale.',
     fullDescription:
       'AI email automation for industrial B2B suppliers. Multi-agent order processing, product matching, inventory checks, and response generation at scale.',
     status: 'live',
     statusLabel: 'Live — deployed with major EU suppliers',
     isFeatured: true,
     isConfidential: true,
-    logoPath: '/images/logo-brade-ai.png',
+    logoPath: '/images/logo-stealth.png',
   },
   {
     id: 'agentcrew',

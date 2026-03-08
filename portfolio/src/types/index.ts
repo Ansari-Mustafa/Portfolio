@@ -80,5 +80,5 @@ export interface SiteConfig {
   heroBio: string;
   ctaHeading: string;
   ctaDescription: string;
-  stats: { value: string; label: string }[];
+  stats: { value: string; label: string; countTo?: number }[];
 }

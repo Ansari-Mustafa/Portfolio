@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect, useCallback } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { siteConfig } from '@/data/site';
 
@@ -87,7 +87,15 @@ export default function BioSection() {
                 className="text-3xl md:text-4xl font-bold"
                 style={{ color: '#FF6B35', fontFamily: 'var(--font-sans)' }}
               >
-                {stat.value}
+                {stat.countTo ? (
+                  <AnimatedCounter
+                    target={stat.countTo}
+                    suffix="+"
+                    active={statsInView}
+                  />
+                ) : (
+                  stat.value
+                )}
               </div>
               <div
                 className="text-xs uppercase tracking-wider mt-1"
@@ -100,5 +108,44 @@ export default function BioSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function AnimatedCounter({
+  target,
+  suffix,
+  active,
+}: {
+  target: number;
+  suffix: string;
+  active: boolean;
+}) {
+  const [count, setCount] = useState(0);
+  const hasRun = useRef(false);
+
+  const animate = useCallback(() => {
+    if (hasRun.current) return;
+    hasRun.current = true;
+
+    const duration = 1200;
+    const stepTime = Math.max(Math.floor(duration / target), 60);
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += 1;
+      setCount(current);
+      if (current >= target) clearInterval(timer);
+    }, stepTime);
+  }, [target]);
+
+  useEffect(() => {
+    if (active) animate();
+  }, [active, animate]);
+
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
   );
 }

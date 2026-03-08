@@ -89,7 +89,24 @@ export default function RolesSection() {
                       color: '#FAFAFA',
                     }}
                   >
-                    {role.isStealth ? 'Stealth Startup' : role.title}
+                    {role.isStealth ? (
+                      <span className="relative inline-block">
+                        <span>Stealth Startup</span>
+                        <span
+                          aria-hidden="true"
+                          className="absolute inset-0 rounded-sm"
+                          style={{
+                            backgroundColor: '#FAFAFA',
+                            clipPath: cardsInView
+                              ? 'inset(0 0 0 0)'
+                              : 'inset(0 100% 0 0)',
+                            transition: 'clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
+                          }}
+                        />
+                      </span>
+                    ) : (
+                      role.title
+                    )}
                   </h3>
                   <p
                     className="text-base md:text-lg"
