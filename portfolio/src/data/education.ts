@@ -14,7 +14,7 @@ export const education: EducationEntry[] = [
     id: 'gik',
     degree: 'B.Sc. Electrical Engineering',
     school: 'GIK Institute, Pakistan',
-    detail: 'Graduated with Distinction · Ranked #2 out of 104 students\nActive member — ARES Lab (Accelerated Reconfigurable Embedded Systems)',
+    detail: 'Graduated with Distinction · Ranked #2 out of 104 students\nOn Dean\'s Honor List in 6 semesters\nActive member — ARES Lab (Accelerated Reconfigurable Embedded Systems)',
     badge: 'Distinction · #2/104',
     logoPath: '/images/logo-giki.png',
   },

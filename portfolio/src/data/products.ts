@@ -105,7 +105,6 @@ export const products: Product[] = [
     status: 'live',
     statusLabel: 'Live — partnered with major banks',
     isFeatured: false,
-    logoPath: '/images/logo-supply-chain-finance.png',
   },
   {
     id: 'textile-po',
@@ -118,7 +117,6 @@ export const products: Product[] = [
     status: 'live',
     statusLabel: 'Live',
     isFeatured: false,
-    logoPath: '/images/logo-textile-po.png',
   },
   {
     id: 'hr-hiring',
@@ -131,7 +129,6 @@ export const products: Product[] = [
     status: 'in-development',
     statusLabel: 'In development — under NDA',
     isFeatured: false,
-    logoPath: '/images/logo-hr-hiring.png',
   },
 ];
 

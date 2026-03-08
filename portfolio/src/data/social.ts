@@ -4,12 +4,12 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'email',
     label: 'Get in Touch',
-    url: '#',
+    url: 'mailto:mustafa@lv4ai.com',
   },
   {
     platform: 'linkedin',
     label: 'LinkedIn',
-    url: '#',
+    url: 'https://www.linkedin.com/in/ansari-mustafa/',
   },
   {
     platform: 'github',

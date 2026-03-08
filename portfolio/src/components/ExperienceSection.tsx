@@ -112,7 +112,7 @@ export default function ExperienceSection() {
     <div
       ref={containerRef}
       id="experience"
-      style={{ height: '350vh' }}
+      style={{ height: '400vh' }}
       className="relative section-dark"
     >
       <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden flex items-center justify-center px-6">

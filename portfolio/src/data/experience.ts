@@ -38,6 +38,18 @@ export const experience: ExperienceEntry[] = [
     logoPath: '/images/logo-systems-limited.png',
   },
   {
+    id: 'archiwiz',
+    period: '2023',
+    role: 'Automation Engineer',
+    company: 'ArchiWiz',
+    description:
+      'Developing AI-based applications to automate workflows and optimize processes, enhancing productivity and efficiency.',
+    fullDescription:
+      'Developing AI-based applications to automate workflows and optimize processes, enhancing productivity and efficiency.',
+    tags: ['Python', 'Web Automation', 'AI Chatbots', 'Unreal Engine'],
+    logoPath: '/images/logo-archiwiz.png',
+  },
+  {
     id: 'design-lab',
     period: 'Earlier',
     role: 'Founder',
