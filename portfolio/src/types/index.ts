@@ -1,4 +1,4 @@
-export type ProductStatus = 'live' | 'launching-2026' | 'in-development' | 'under-nda';
+export type ProductStatus = 'live' | 'launching-2026' | 'in-development' | 'in-beta' | 'under-nda';
 
 export type Industry =
   | 'industrial'
@@ -34,6 +34,7 @@ export interface Role {
   highlight?: string;
   logoPath?: string;
   isStealth?: boolean;
+  link?: string;
 }
 
 export interface ExperienceEntry {

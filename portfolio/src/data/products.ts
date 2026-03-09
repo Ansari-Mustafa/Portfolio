@@ -28,6 +28,7 @@ export const products: Product[] = [
     statusLabel: 'Live — multiple enterprise clients',
     isFeatured: true,
     logoPath: '/images/logo-agentcrew.png',
+    link: 'https://agentcrew.lv4ai.com',
   },
   {
     id: 'spide',
@@ -41,6 +42,7 @@ export const products: Product[] = [
     statusLabel: 'Live',
     isFeatured: true,
     logoPath: '/images/logo-spide.png',
+    link: 'https://spide.ai',
   },
   {
     id: 'medgen-ai',
@@ -54,6 +56,35 @@ export const products: Product[] = [
     statusLabel: 'Live — in use by NHS doctors',
     isFeatured: true,
     logoPath: '/images/logo-medgen-ai.png',
+    link: 'https://medgen.lv4ai.com',
+  },
+  {
+    id: 'curiosity-learning',
+    name: 'Curiosity Learning',
+    industry: 'education',
+    shortDescription:
+      'E-learning copilot with OCR homework checking, quiz generation, and teacher dashboards.',
+    fullDescription:
+      'E-learning copilot for students and teachers. OCR-based homework checking, automated quiz generation & testing, and teacher dashboards showing student weaknesses.',
+    status: 'in-beta',
+    statusLabel: 'In beta',
+    isFeatured: true,
+    logoPath: '/images/logo-curiosity.png',
+    link: 'https://curiosity.lv4ai.com',
+  },
+  {
+    id: 'hospitality-ai',
+    name: 'Hospitality AI',
+    industry: 'hospitality',
+    shortDescription:
+      'AI-powered property and guest experience management for MENA short-term rentals.',
+    fullDescription:
+      'AI-powered property and guest experience management for the MENA short-term rental market. Smart tools to increase landlord income and improve guest experience.',
+    status: 'in-beta',
+    statusLabel: 'In beta',
+    isFeatured: false,
+    logoPath: '/images/logo-hospitality-ai.png',
+    link: 'https://hospitalityai.biz',
   },
   {
     id: 'telehealth-ai',
@@ -67,32 +98,6 @@ export const products: Product[] = [
     statusLabel: 'Under development — launching 2026',
     isFeatured: true,
     logoPath: '/images/logo-tele-ai.png',
-  },
-  {
-    id: 'curiosity-learning',
-    name: 'Curiosity Learning',
-    industry: 'education',
-    shortDescription:
-      'E-learning copilot with OCR homework checking, quiz generation, and teacher dashboards.',
-    fullDescription:
-      'E-learning copilot for students and teachers. OCR-based homework checking, automated quiz generation & testing, and teacher dashboards showing student weaknesses.',
-    status: 'launching-2026',
-    statusLabel: 'Launching in Middle East — 2026',
-    isFeatured: true,
-    logoPath: '/images/logo-curiosity.png',
-  },
-  {
-    id: 'hospitality-ai',
-    name: 'Hospitality AI',
-    industry: 'hospitality',
-    shortDescription:
-      'AI-powered property and guest experience management for MENA short-term rentals.',
-    fullDescription:
-      'AI-powered property and guest experience management for the MENA short-term rental market. Smart tools to increase landlord income and improve guest experience.',
-    status: 'in-development',
-    statusLabel: 'In development',
-    isFeatured: false,
-    logoPath: '/images/logo-hospitality-ai.png',
   },
   {
     id: 'supply-chain-finance',

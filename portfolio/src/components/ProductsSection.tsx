@@ -21,6 +21,7 @@ const STATUS_MAP: Record<string, string> = {
   live: 'LIVE',
   'launching-2026': 'LAUNCHING 2026',
   'in-development': 'IN DEVELOPMENT',
+  'in-beta': 'IN BETA',
   'under-nda': 'UNDER NDA',
 };
 
@@ -180,9 +181,9 @@ export default function ProductsSection() {
 function ProductCard({ product }: { product: Product }) {
   const industryColor = INDUSTRY_COLORS[product.industry] || '#FF6B35';
 
-  return (
+  const card = (
     <div
-      className="flex-shrink-0 w-full md:w-[350px] flex flex-col rounded-lg overflow-hidden border border-gray-200"
+      className={`flex flex-col rounded-lg overflow-hidden border border-gray-200${product.link ? ' group-hover:border-gray-300 transition-colors' : ''}${!product.link ? ' flex-shrink-0 w-full md:w-[350px]' : ' w-full h-full'}`}
       style={{ backgroundColor: '#FFFFFF' }}
     >
       {/* Top colored stripe */}
@@ -242,6 +243,16 @@ function ProductCard({ product }: { product: Product }) {
       </div>
     </div>
   );
+
+  if (product.link) {
+    return (
+      <a href={product.link} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-full md:w-[350px] group">
+        {card}
+      </a>
+    );
+  }
+
+  return card;
 }
 
 function MoreProjectsCard() {

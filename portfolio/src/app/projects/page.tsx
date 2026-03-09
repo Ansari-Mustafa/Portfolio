@@ -17,6 +17,7 @@ const STATUS_MAP: Record<string, string> = {
   live: 'LIVE',
   'launching-2026': 'LAUNCHING 2026',
   'in-development': 'IN DEVELOPMENT',
+  'in-beta': 'IN BETA',
   'under-nda': 'UNDER NDA',
 };
 

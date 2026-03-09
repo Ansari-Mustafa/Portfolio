@@ -107,6 +107,10 @@ export default function RolesSection() {
                           [REDACTED]
                         </span>
                       </span>
+                    ) : role.link ? (
+                      <a href={role.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        {role.title}
+                      </a>
                     ) : (
                       role.title
                     )}

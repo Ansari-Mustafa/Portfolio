@@ -19,6 +19,7 @@ export const roles: Role[] = [
     description:
       'Co-founded an AI company shipping products and services across healthcare, education, hospitality, fintech, and industrial automation. Our platform AgentCrew powers enterprise agent orchestration. We also provide AI strategy consulting and build custom AI systems integrated directly into client operations.',
     logoPath: '/images/logo-lv4ai.png',
+    link: 'https://lv4ai.com',
   },
   {
     id: 'freiburg',
